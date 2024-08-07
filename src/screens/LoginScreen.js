@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import { firebase } from '../firebaseConfig';
-import * as Google from 'expo-auth-session/providers/google';
 import * as WebBrowser from 'expo-web-browser';
 
 WebBrowser.maybeCompleteAuthSession();
@@ -12,8 +11,6 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [request, response, promptAsync] = Google.useAuthRequest({
-    expoClientId: 'TU_EXPO_CLIENT_ID',
-    androidClientId: 'TU_ANDROID_CLIENT_ID',
   });
 
   React.useEffect(() => {
